@@ -1,0 +1,29 @@
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div id="title">
+    <span class="title alignleft">
+      BORA Explorer: Recent Blocks
+    </span>
+    <span class="more alignright"><a href="{{ explUrl }}" class="btn" target="_blank">More</a></span>
+  </div>
+  <div class="data">
+    <table id="table_blocks" class="table table-bordered" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th class="text-center" width="100px">Block #</th>
+          <th class="text-center" width="250px">Block Hash</th>
+          <th class="text-center" width="*">Date(UTC)</th>
+          <th class="text-center" width="50px"># of Txs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bp_block_list">
+          <td class="text-center animated fadeIn">{{ item.blockNo }}</td>
+          <td class="text-center animated fadeIn"><span class="address-tag text-truncate">{{ item.blockHash }}</span></td>
+          <td class="text-center animated fadeIn">{{ item.blockDate | amUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss' }}</td>
+          <td class="text-right animated fadeIn">{{ item.transactionCount | number }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

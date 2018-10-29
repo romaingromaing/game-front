@@ -1,0 +1,26 @@
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div id="title">
+    <span class="title alignleft">
+      BORA {{ appName }} SCORE
+    </span>
+  </div>
+  <div class="data">
+    <table id="table_ranks" class="table table-bordered" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th class="text-center" width="15%">Score</th>
+          <th class="text-center" width="45%">User</th>
+          <th class="text-center" width="40%">Date(UTC)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of rank_list">
+          <td class="text-center">{{ item.score }}</td>
+          <td class="text-left"><span class="address-tag text-truncate">{{ item.user }}</span></td>
+          <td class="text-right text-truncate">{{ item.date | amUtc | amDateFormat: 'YYYY-MM-DD HH:mm:ss' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

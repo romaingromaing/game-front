@@ -1,0 +1,43 @@
+<!-- Page Content -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<!-- https://daneden.github.io/animate.css/ -->
+<div id="page-wrapper">
+  <div id="title">
+    <span class="title alignleft">
+      BORA Explorer: Recent Transactions
+    </span>
+    <span class="more alignright"><a href="{{ explUrl }}" class="btn" target="_blank">More</a></span>
+  </div>
+  <div class="data">
+    <table id="table_transactions" class="table table-bordered text-truncate" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th class="text-center" width="20%" max-width="0">Hash</th>
+          <th class="text-center" width="10%" max-width="0">Block #</th>
+          <th class="text-center" width="20%" max-width="0">From</th>
+          <th class="text-center" width="20%" max-width="0">To</th>
+          <th class="text-center" width="10%" max-width="0">Amount</th>
+          <th class="text-center" width="10%" max-width="0">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of bp_tx_list">
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ item.transactionHash }}</span></td>
+          <td class="text-center animated fadeInUp delay-1s">{{ item.blockNo }}</td>
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ item.fromAddress }}</span></td>
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ item.toAddress }}</span></td>
+          <td class="text-right animated fadeInUp delay-1s">{{ item.amount | number }}</td>
+          <td class="text-center animated fadeInUp delay-1s">{{ item.status }}</td>
+        </tr>
+        <!-- <tr>
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ bp_addr_list.transactionHash }}</span></td>
+          <td class="text-center animated fadeInUp delay-1s">{{ bp_addr_list.blockNo }}</td>
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ bp_addr_list.fromAddress }}</span></td>
+          <td class="text-center animated fadeInUp delay-1s"><span class="address-tag text-truncate">{{ bp_addr_list.toAddress }}</span></td>
+          <td class="text-right animated fadeInUp delay-1s">{{ bp_addr_list.amount | number }}</td>
+          <td class="text-center animated fadeInUp delay-1s">{{ bp_addr_list.status }}</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>

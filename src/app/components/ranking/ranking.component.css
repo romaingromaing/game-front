@@ -1,0 +1,72 @@
+#page-wrapper {
+  margin: 20px;
+}
+.address-tag{
+  display:inline-block;
+  width:300px;
+  vertical-align: middle
+}
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  text-align: left;
+  font-weight: bold;
+  font-size:20px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+
+.table-bordered {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: transparent;
+  
+  border: 1px solid #ddd;
+}
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+  border-top: 0;
+}
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border-bottom-width: 2px;
+  vertical-align: middle;
+}
+.table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 5px;
+  line-height: 1.42857143;
+  font-size: 14px;
+}
+.table>thead>tr>td, .table>thead>tr>th {
+  background-color: #eee;
+}
+.table-bordered td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+  padding-right:10px;
+}.text-center {
+  text-align: center;
+}
