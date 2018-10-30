@@ -1,26 +1,26 @@
-# 게임 프론트
-**BORA Ecosystem testnet**을 위한 Angular 웹 프론트입니다.
+# Game Front
+Angular web source for **BORA Lagoon Testnet**
 
 ## Background
-- Angular/Angular-cli([Angular Official Site](https://angular.io/)): 게임 프론트를 만들기 위하여 Angular를 사용합니다. 
-- npm([npm OfficialSite](https://www.npmjs.com/)): 서버 구동에 필요한 패키지 설치를 위하여 npm을 사용합니다.
+- Angular/Angular-cli([Angular Official Site](https://angular.io/)): Angular is used to create the game front.
+- npm([npm OfficialSite](https://www.npmjs.com/)): npm is used to install the packages needed to run the server.
 
 
-## 설치
-### 필요 프로그램
-게임 웹의 구동을 위해서는 아래 프로그램이 필요합니다.
+## Install
+### Required environment
+The following applications are required to run the game front.
 - Angular
 - Angular-cli
-### 다운로드
-이 git 저장소를 clone 하시기 바랍니다.
+### Download
+Please clone this git repository.
 ```bash
 git clone https://github.com/boraecosystem/game-front.git
 cd game-front
 npm install
 ```
 
-## 설정
-environments/environment.*ts # Please, check the following elements of this file and set the gameuri according to your game server. 
+## Settings
+environments/environment.*ts //Please, check the contents of this file and set the gameuri value according to your game server.
 ```
 production: false,                                   // Angular environment value
 api: 'https://testnet.bora-lagoon.com/',               // BORA Testnet API uri(Do not modify)
@@ -32,42 +32,42 @@ gameuri: 'http://127.0.0.1:3200/',                   // game server uri
 ```
 
 
-## 사용
+## Usage
 
-### 구동
-게임 웹 다운로드 폴더로 이동하신 후, 아래와 같이 게임 웹을 구동할 수 있습니다.
+### Run
+After moving to the game front download directory, you can run the game front as shown below.
 ```bash
 ng serve
 ```
-`http://localhost:4200` 접속
+connect `http://localhost:4200`
 
 
-## **BORA Lagoon** 연동
-연동 예제 코드는 아래를 참고해 주시기 바랍니다.
+## **BORA Lagoon** Integration
+Please see the integration example code below.
 
-### 인증 코드 요청 페이지 접근 - Authorization Code Grant
+### Access authorization code request page - Authorization Code Grant
 ```javascript
 window.location.href = 'https://testnet.bora-lagoon.com/member/oauth/authorize' +
   '?response_type=code&state=xyz&client_id=' + this.clientId + '&redirect_uri=' + this.redirectUri;
 ```
-인증코드를 획득한 후, 연동된 게임 서버를 통하여 사용자 토큰을 획득합니다.
+After acquiring the authorization code, acquire the user token through the interconnected game server.
 
-### BORA Explorer API 연동
-#### App과 관련된 Transaction 확인하기
+### BORA Explorer API Integration
+#### Check app related transaction
 ```javascript
 public bp_tx_list(appId: number, page: number, page_size: number): Observable<any> {
     return this.http.get('https://testnet-explorerapi.bora-lagoon.com/points/' + appId + '/txs?page=' + page + '&pageSize=' + page_size).map(res => res);
 }
 ```
 
-#### BORA Shell Block 확인하기
+#### Check BORA Shell Block
 ```javascript
 public bp_block_list(appId: number, page: number = 1, page_size: number = 20): Observable<any> {
     return this.http.get('https://testnet-explorerapi.bora-lagoon.com/points/' + appId + '/blocks?page=' + page + '&pageSize=' + page_size).map(res => res);
 }
 ```
 
-#### 내 BORA Shell 정보 가져오기
+#### Get my BORA Shell information
 ```javascript
 public bp_info_addr(appId: number, address: string): Observable<any> {
     return this.http.get('https://testnet-explorerapi.bora-lagoon.com/points/' + appId + '/addresses/' + address).map(res => res);
