@@ -1,5 +1,5 @@
 # Game Front
-Angular web source for **BORA Lagoon Testnet**
+Angular web source for the game running on **BORA Lagoon Testnet**
 
 ## Background
 - Angular/Angular-cli([Angular Official Site](https://angular.io/)): Angular is used to create the game front.
