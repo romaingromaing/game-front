@@ -15,7 +15,7 @@
 이 git 저장소를 clone 하시기 바랍니다.
 ```bash
 git clone https://github.com/boraecosystem/game-front.git
-cd devnet-gamefront
+cd game-front
 npm install
 ```
 
