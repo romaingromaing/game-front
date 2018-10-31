@@ -20,7 +20,7 @@ npm install
 ```
 
 ## Settings
-environments/environment.*ts //Please, check the contents of this file and set the gameuri value according to your game server.
+- Check the contents of the environment file(at {project root}/environments/environment.ts) and set the gameuri value according to your game server.
 ```
 production: false,                                   // Angular environment value
 api: 'https://testnet.bora-lagoon.com/',               // BORA Testnet API uri(Do not modify)
@@ -35,7 +35,7 @@ gameuri: 'http://127.0.0.1:3200/',                   // game server uri
 ## Usage
 
 ### Run
-After moving to the game front project directory, you can run the game front as follows:
+After moving to the project root directory, you can run the game front as follows:
 ```bash
 ng serve
 ```
