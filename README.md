@@ -35,11 +35,11 @@ gameuri: 'http://127.0.0.1:3200/',                   // game server uri
 ## Usage
 
 ### Run
-After moving to the game front download directory, you can run the game front as shown below.
+After moving to the game front project directory, you can run the game front as follows:
 ```bash
 ng serve
 ```
-connect `http://localhost:4200`
+Then type `http://localhost:4200` in your browser.
 
 
 ## **BORA Lagoon** Integration
@@ -53,14 +53,14 @@ window.location.href = 'https://testnet.bora-lagoon.com/member/oauth/authorize' 
 After acquiring the authorization code, acquire the user token through the interconnected game server.
 
 ### BORA Explorer API Integration
-#### Check app related transaction
+#### Get transaction list related app
 ```javascript
 public bp_tx_list(appId: number, page: number, page_size: number): Observable<any> {
     return this.http.get('https://testnet-explorerapi.bora-lagoon.com/points/' + appId + '/txs?page=' + page + '&pageSize=' + page_size).map(res => res);
 }
 ```
 
-#### Check BORA Shell Block
+#### Get block list related app
 ```javascript
 public bp_block_list(appId: number, page: number = 1, page_size: number = 20): Observable<any> {
     return this.http.get('https://testnet-explorerapi.bora-lagoon.com/points/' + appId + '/blocks?page=' + page + '&pageSize=' + page_size).map(res => res);
