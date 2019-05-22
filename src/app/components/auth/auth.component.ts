@@ -38,10 +38,15 @@ export class AuthComponent implements OnInit {
         }
 
         this.api.getMembers(accessToken).subscribe(
-          resMember => {
-            bpAddress = resMember.token_addr;
+          res => {
+            if (res.status != 200) {
+              console.log('Returned bpAddress Invalid:', res);
+              window.location.href = environment.portal;
+              return false;
+            }
+            bpAddress = res.data.token_addr;
             if (bpAddress === undefined || !bpAddress) {
-              console.log('Returned bpAddress Invalid:', resMember);
+              console.log('Returned bpAddress Invalid:', res);
               window.location.href = environment.portal;
               return false;
             }

@@ -20,7 +20,7 @@
     </div> -->
     <div id="wrap_personal" class="div_personal">
       <div class="div_balance">
-        <app-balance [appId]="appId" [bpAddress]="bpAddress" [userEmail]="userEmail"></app-balance>
+        <app-balance  [bpAddress]="bpAddress" [userEmail]="userEmail"></app-balance>
       </div>
       <div class="div_ranking">
         <app-ranking [appId]="appId" [accessToken]="accessToken" [bpAddress]="bpAddress"></app-ranking>
@@ -28,7 +28,7 @@
     </div>
 
     <div id="wrap_block" class="div_block">
-      <app-blocks [appId]="appId" [bpAddress]="bpAddress"></app-blocks>
+      <app-blocks [bpAddress]="bpAddress"></app-blocks>
     </div>
     <div id="wrap_tx" class="div_tx">
       <app-transactions [bpAddress]="bpAddress"></app-transactions>

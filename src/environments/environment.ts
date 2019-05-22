@@ -5,10 +5,11 @@
 
 export const environment = {
   production: false,
-  api: `https://testnet.bora-lagoon.com/`,
-  bpapi: `https://testnet-explorerapi.bora-lagoon.com`,
-  explorer: `https://testnet-explorer.bora-lagoon.com`,
-  portal: `https://testnet.bora-lagoon.com/portal/`,
+  api: `https://accounts.boraecosystem.com/`,  // 
+  chainApi: `testnet-chain-api.boraecosystem.com/`,
+  bpapi: `https://testnet-explorer-api.boraecosystem.com`,
+  explorer: `https://testnet-explorer.boraecosystem.com`,
+  portal: `https://lagoon.boraecosystem.com/`,
   authredirecturi: 'http://localhost:4200/cb',
   gameuri: 'http://127.0.0.1:3200/',
   localuri: 'http://localhost:4200',

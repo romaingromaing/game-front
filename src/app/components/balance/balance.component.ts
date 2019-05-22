@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { environment } from '../../../environments/environment';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,9 +9,10 @@ import * as $ from 'jquery';
   styleUrls: ['./balance.component.css']
 })
 export class BalanceComponent implements OnInit, OnDestroy {
-  @Input() appId: number;
   @Input() bpAddress: string;
   @Input() userEmail: string;
+
+  public appId: number = environment.gameappId;
 
   public addr_info: any = {};
   public bpAmount: number = 0 as any;

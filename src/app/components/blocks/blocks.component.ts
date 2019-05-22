@@ -9,13 +9,14 @@ import * as $ from 'jquery';
   styleUrls: ['./blocks.component.css']
 })
 export class BlocksComponent implements OnInit, OnDestroy {
-  @Input() appId: number;
+  //@Input() appId: number;
   @Input() bpAddress: string;
 
   public bp_block_list: any = [];
   public explUrl: string; // = environment.explorer;
   private interval_id: any;
-
+  public appId: number = environment.gameappId;
+  
   constructor(
     private api: ApiService
   ) { }

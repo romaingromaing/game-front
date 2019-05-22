@@ -49,8 +49,14 @@ export class ApiService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + userAccessToken,
     });
-    return this.http.get(environment.api + 'chain/v1/services/members', { headers: headers })
+    
+    console.log('access token:' + userAccessToken)
+    //return this.http.get('https://X0yT6nI69Q:yM5pnll9GwdMjkapd7MWX0@' + environment.chainApi + 'chain/v1.2/services/members', { headers: headers })
+    //return this.http.get('https://' + environment.chainApi + 'chain/v1.2/services/members', { headers: headers })
+    //  .map(res => res);
+    return this.http.get(environment.gameuri + 'memberAddr', { headers: headers })
       .map(res => res);
+
   }
 
   ///////////////
